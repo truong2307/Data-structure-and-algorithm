@@ -28,7 +28,7 @@ namespace manageCarr.Model
         public override void Output()
         {
             base.Output();
-            Console.WriteLine("Car Seat Number" +CarSeatNumber);
+            Console.WriteLine("Car Seat Number: " +CarSeatNumber);
         }
     }
 }

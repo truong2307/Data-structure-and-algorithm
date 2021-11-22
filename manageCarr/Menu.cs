@@ -1,6 +1,7 @@
 ﻿using manageCarr.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,31 @@ namespace manageCarr
 
         public void AddCar()
         {
-            Console.WriteLine("Import amount Car: ");
-            int amount = int.Parse(Console.ReadLine());
-            for (int i = 0; i < amount; i++)
+            Console.WriteLine(" Import(truck) or (travel) to select ");
+            string travel = Console.ReadLine();
+            if ("travel".Equals(travel))
             {
-                TravelCar travelCar = new TravelCar();
-                travelCar.Input();
-                listCar.Add(travelCar.Id,travelCar);
+                Console.WriteLine("Import amount Car: ");
+                int amount = int.Parse(Console.ReadLine());
+                for (int i = 0; i < amount; i++)
+                {
+                    TravelCar travelCar = new TravelCar();
+                    travelCar.Input();
+                    listCar.Add(travelCar.Id, travelCar);
+                }
             }
+            if ("truck".Equals(travel))
+            {
+                Console.WriteLine("Import amount Car: ");
+                int amount = int.Parse(Console.ReadLine());
+                for (int i = 0; i < amount; i++)
+                {
+                    Truck truckCar = new Truck();
+                    truckCar.Input();
+                    listCar.Add(truckCar.Id, truckCar);
+                }
+            }
+
         }
 
         public void GetCar()
@@ -72,12 +90,12 @@ namespace manageCarr
                         GetCar();
                         break;
                     case 3:
-                        Console.WriteLine("Import your IdCar");
+                        Console.WriteLine("Import your IdCar want find");
                         int idCarRequest = int.Parse(Console.ReadLine());
                         FindCar(idCarRequest);
                         break;
                     case 4:
-                        Console.WriteLine("Import your IdCar");
+                        Console.WriteLine("Import your IdCar want delete");
                         int idCar = int.Parse(Console.ReadLine());
                         DeleteCar(idCar);
                         break;

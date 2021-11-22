@@ -36,9 +36,9 @@ namespace manageCarr.Model
 
         public virtual void Output()
         {
-            Console.WriteLine("Id" +Id);
-            Console.WriteLine("Name" +Name);
-            Console.WriteLine("License Plates" + LicensePlates);
+            Console.WriteLine("Id: " +Id);
+            Console.WriteLine("Name: " +Name);
+            Console.WriteLine("License Plates: " + LicensePlates);
         }
     }
 }

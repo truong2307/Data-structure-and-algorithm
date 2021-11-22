@@ -40,11 +40,20 @@ namespace manageCarr
             }
         }
 
+        public void DeleteCar(int id)
+        {
+            if (listCar.ContainsKey(id))
+            {
+                listCar.Remove(id);
+            }
+        }
+
         public void ShowMenu()
         {
             Console.WriteLine(" 1. Add car");
             Console.WriteLine(" 2. Display Car");
-            Console.WriteLine(" 2. Find Car with id");
+            Console.WriteLine(" 3. Find Car with id");
+            Console.WriteLine(" 4. Delete Car with id");
         }
         public void SelectFeature()
         {
@@ -67,10 +76,15 @@ namespace manageCarr
                         int idCarRequest = int.Parse(Console.ReadLine());
                         FindCar(idCarRequest);
                         break;
+                    case 4:
+                        Console.WriteLine("Import your IdCar");
+                        int idCar = int.Parse(Console.ReadLine());
+                        DeleteCar(idCar);
+                        break;
                     default:
                         break;
                 }
-            } while (select != 3);
+            } while (select != 5);
         }
     }
 }

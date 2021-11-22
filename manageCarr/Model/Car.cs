@@ -15,7 +15,6 @@ namespace manageCarr.Model
 
         public Car()
         {
-
         }
 
         public Car(int id, string name,string licensePlates)

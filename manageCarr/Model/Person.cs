@@ -8,5 +8,6 @@ namespace manageCarr.Model
 {
     abstract class Person
     {
+
     }
 }

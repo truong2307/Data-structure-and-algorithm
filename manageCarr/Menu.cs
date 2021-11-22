@@ -28,12 +28,23 @@ namespace manageCarr
             foreach (var car in listCar.Values)
             {
                 car.Output();
+                Console.WriteLine("-------------------");
             }
         }
+
+        public void FindCar(int id)
+        {
+            if (listCar.ContainsKey(id))
+            {
+                listCar[id].Output();
+            }
+        }
+
         public void ShowMenu()
         {
             Console.WriteLine(" 1. Add car");
             Console.WriteLine(" 2. Display Car");
+            Console.WriteLine(" 2. Find Car with id");
         }
         public void SelectFeature()
         {
@@ -50,6 +61,11 @@ namespace manageCarr
                         break;
                     case 2:
                         GetCar();
+                        break;
+                    case 3:
+                        Console.WriteLine("Import your IdCar");
+                        int idCarRequest = int.Parse(Console.ReadLine());
+                        FindCar(idCarRequest);
                         break;
                     default:
                         break;

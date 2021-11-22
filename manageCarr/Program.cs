@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace manageCarr
 {
@@ -6,7 +7,9 @@ namespace manageCarr
     {
         static void Main(string[] args)
         {
-            
+            Console.OutputEncoding = Encoding.UTF8;
+            Menu menu = new Menu();
+            menu.SelectFeature();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace manageCarr.Car
+namespace manageCarr.Model
 {
     public class Car
     {
@@ -20,7 +20,7 @@ namespace manageCarr.Car
             this.LicensePlates = licensePlates;
         }
 
-        public virtual void Input()
+        protected virtual void Input()
         {
             Console.WriteLine("Import Id");
             this.Id = int.Parse(Console.ReadLine());
@@ -30,7 +30,7 @@ namespace manageCarr.Car
             this.LicensePlates = Console.ReadLine();
         }
 
-        public virtual void Output()
+        protected virtual void Output()
         {
             Console.WriteLine("Id" +Id);
             Console.WriteLine("Name" +Name);

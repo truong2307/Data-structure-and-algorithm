@@ -66,13 +66,36 @@ namespace manageCarr
             }
         }
 
+        public void SortById()
+        {
+            var listCarOrderById = listCar.OrderBy(c => c.Key);
+
+            foreach (var car in listCarOrderById)
+            {
+                car.Value.Output();
+            }
+        }
+
+        public void SortByName()
+        {
+            var listCarOrderByName = listCar.OrderBy(c => c.Value.Name);
+
+            foreach (var car in listCarOrderByName)
+            {
+                car.Value.Output();
+            }
+        }
+
         public void ShowMenu()
         {
             Console.WriteLine(" 1. Add car");
             Console.WriteLine(" 2. Display Car");
             Console.WriteLine(" 3. Find Car with id");
             Console.WriteLine(" 4. Delete Car with id");
+            Console.WriteLine(" 5. Sort by id");
+            Console.WriteLine(" 6. Sort by name");
         }
+
         public void SelectFeature()
         {
             int select;
@@ -99,10 +122,16 @@ namespace manageCarr
                         int idCar = int.Parse(Console.ReadLine());
                         DeleteCar(idCar);
                         break;
+                    case 5:
+                        SortById();
+                        break;
+                    case 6:
+                        SortByName();
+                        break;
                     default:
                         break;
                 }
-            } while (select != 5);
+            } while (select != 6);
         }
     }
 }

@@ -10,8 +10,13 @@ namespace manageCarr.Model
     public class Car
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LicensePlates { get; set; }
+        private string Name { get; set; }
+        private string LicensePlates { get; set; }
+
+        public Car()
+        {
+
+        }
 
         public Car(int id, string name,string licensePlates)
         {
@@ -20,7 +25,7 @@ namespace manageCarr.Model
             this.LicensePlates = licensePlates;
         }
 
-        protected virtual void Input()
+        public virtual void Input()
         {
             Console.WriteLine("Import Id");
             this.Id = int.Parse(Console.ReadLine());
@@ -30,7 +35,7 @@ namespace manageCarr.Model
             this.LicensePlates = Console.ReadLine();
         }
 
-        protected virtual void Output()
+        public virtual void Output()
         {
             Console.WriteLine("Id" +Id);
             Console.WriteLine("Name" +Name);

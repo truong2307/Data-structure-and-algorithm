@@ -14,14 +14,18 @@ namespace manageCarr.Model
             this.CarSeatNumber = carSeatNumber;
         }
 
-        protected override void Input()
+        public TravelCar()
+        {
+        }
+
+        public override void Input()
         {
             base.Input();
             Console.WriteLine("Import Car Seat Number");
             this.CarSeatNumber = int.Parse(Console.ReadLine());
         }
 
-        protected override void Output()
+        public override void Output()
         {
             base.Output();
             Console.WriteLine("Car Seat Number" +CarSeatNumber);

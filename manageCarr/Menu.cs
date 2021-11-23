@@ -66,9 +66,21 @@ namespace manageCarr
             }
         }
 
-        public void SortById()
+        //sort ascending with id
+        public void SortAscendingById()
         {
             var listCarOrderById = listCar.OrderBy(c => c.Key);
+
+            foreach (var car in listCarOrderById)
+            {
+                car.Value.Output();
+            }
+        }
+
+        //sort Descending with id
+        public void SortDescendingById()
+        {
+            var listCarOrderById = listCar.OrderByDescending(c => c.Key);
 
             foreach (var car in listCarOrderById)
             {
@@ -92,8 +104,9 @@ namespace manageCarr
             Console.WriteLine(" 2. Display Car");
             Console.WriteLine(" 3. Find Car with id");
             Console.WriteLine(" 4. Delete Car with id");
-            Console.WriteLine(" 5. Sort by id");
-            Console.WriteLine(" 6. Sort by name");
+            Console.WriteLine(" 5. Sort ascending by id");
+            Console.WriteLine(" 6. Sort descending by id");
+            Console.WriteLine(" 7. Sort by name");
         }
 
         public void SelectFeature()
@@ -123,9 +136,12 @@ namespace manageCarr
                         DeleteCar(idCar);
                         break;
                     case 5:
-                        SortById();
+                        SortAscendingById();
                         break;
                     case 6:
+                        SortDescendingById();
+                        break;
+                    case 7:
                         SortByName();
                         break;
                     default:

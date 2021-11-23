@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace manageCarr
 {
-    public class Menu
+    public class Menu : IMenu
     {
         Dictionary<int, Car> listCar = new Dictionary<int, Car>();
 

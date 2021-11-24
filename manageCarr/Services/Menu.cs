@@ -147,7 +147,7 @@ namespace manageCarr
                     default:
                         break;
                 }
-            } while (select != 6);
+            } while (select != 8);
         }
     }
 }

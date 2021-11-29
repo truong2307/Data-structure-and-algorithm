@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,7 @@ namespace manageCarr.ExtensionMethods
 {
     public static class ExtensionMethod
     {
+
         // func để chia thành 2 mảng, 1 mảng lớn và 1 mảng nhỏ hơn pivot
         private static int Partition<T>(T[] arr, int left, int right) where T : IComparable
         {
@@ -41,7 +43,8 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-        public static void Quick_Sort<T>(T[] arr, int left, int right) where T : IComparable
+        //Sort Icompare theo quicksort
+        public static void QuickSort<T>(this T[] arr, int left, int right) where T : IComparable
         {
             if (left < right)
             {
@@ -51,16 +54,39 @@ namespace manageCarr.ExtensionMethods
                 //quick sort mảng nhỏ hơn pivot
                 if (pivot > 1)
                 {
-                    Quick_Sort<T>(arr, left, pivot - 1);
+                    QuickSort<T>(arr, left, pivot - 1);
                 }
 
                 // quick sort mảng lớn hơn pivot
                 if (pivot + 1 < right)
                 {
-                    Quick_Sort<T>(arr, pivot + 1, right);
+                    QuickSort<T>(arr, pivot + 1, right);
                 }
             }
         }
+
+        /// <summary>
+        /// Bubble sort
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arr"></param>
+        public static void BubbleSort<T>(this T[] arr) where T: IComparable
+        {
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                for (int j = i+1; j < arr.Length; j++)
+                {
+                    if (arr[i].CompareTo(arr[j]) > 0)
+                    {
+                        T temp = arr[i];
+                        arr[j] = arr[i];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+
+
 
     }
 }

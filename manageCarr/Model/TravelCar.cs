@@ -14,10 +14,6 @@ namespace manageCarr.Model
         {
         }
 
-        public TravelCar(int id, string name, string licensePlates, int carSeatNumber) : base(id,name,licensePlates)
-        {
-            this.CarSeatNumber = carSeatNumber;
-        }
 
         //tính đa hình
         public override void Input()

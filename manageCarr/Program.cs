@@ -11,11 +11,18 @@ namespace manageCarr
         {
             IComparable[] arr =  { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
 
-            ExtensionMethod.Quick_Sort(arr, 0, arr.Length - 1);
-
+            Console.WriteLine("Quick sort");
+            arr.QuickSort(0, arr.Length - 1);
             foreach (var item in arr)   
             {
-                Console.WriteLine(" "+ item);
+                Console.Write(" "+ item);
+            }
+
+            Console.WriteLine("\nBubble sort");
+            arr.BubbleSort();
+            foreach (var item in arr)
+            {
+                Console.Write(" " + item);
             }
 
             Console.ReadKey();

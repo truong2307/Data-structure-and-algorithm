@@ -110,6 +110,14 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
+        /// <summary>
+        /// Merge sort
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arr"></param>
+        /// <param name="left"></param>
+        /// <param name="middle"></param>
+        /// <param name="right"></param>
         private static void Merge<T>(T[] arr, int left, int middle, int right) where T : IComparable
         {
             int indexLeft, indexRight, indexResult = left;
@@ -117,22 +125,27 @@ namespace manageCarr.ExtensionMethods
             int lenghtLeft = middle - left + 1;
             // lenght of array right
             int lenghtRight = right - middle;
-
+            // create array contain value left
             T[] leftArray = new T[lenghtLeft];
+            // create array contain value right
             T[] rightArray = new T[lenghtRight];
 
+            //import value by indexleft to array left from arr
             for (indexLeft = 0; indexLeft < lenghtLeft; indexLeft++)
             {
                 leftArray[indexLeft] = arr[left + indexLeft];
             }
+            //import value by indexright to array right from arr
             for (indexRight = 0; indexRight < lenghtRight; indexRight++)
             {
                 rightArray[indexRight] = arr[middle + indexRight + 1];
             }
 
+            // compare value at indexleft and indexright 
             indexLeft = 0; indexRight = 0;
             while (indexLeft < lenghtLeft && indexRight < lenghtRight)
             {
+                //if value at indexleft <= value at indexright 
                 if (leftArray[indexLeft].CompareTo(rightArray[indexRight]) <= 0)
                 {
                     arr[indexResult] = leftArray[indexLeft];
@@ -145,12 +158,14 @@ namespace manageCarr.ExtensionMethods
                 }
                 indexResult++;
             }
+            //if in arrayright has not value then add value from arrayleft to arr by indexresult
             while (indexLeft < lenghtLeft)
             {
                 arr[indexResult] = leftArray[indexLeft];
                 indexResult++;
                 indexLeft++;
             }
+            //if in arrayleft has not value then add value from arrayright to arr by indexresult
             while (indexRight < lenghtRight)
             {
                 arr[indexResult] = rightArray[indexRight];
@@ -159,6 +174,7 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
+        //divide arr until it has 1 value
         public static void MergSort<T>(this T[] arr, int left, int right) where T : IComparable
         {
             if (left < right)

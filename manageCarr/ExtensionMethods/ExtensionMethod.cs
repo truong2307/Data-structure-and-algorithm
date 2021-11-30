@@ -14,7 +14,7 @@ namespace manageCarr.ExtensionMethods
         // func để chia thành 2 mảng, 1 mảng lớn và 1 mảng nhỏ hơn pivot
         private static int Partition<T>(T[] arr, int left, int right) where T : IComparable
         {
-            IComparable pivot = arr[left];
+            T pivot = arr[left];
             while (true)
             {
                 // if arr[left] < pivot
@@ -79,7 +79,7 @@ namespace manageCarr.ExtensionMethods
                     if (arr[i].CompareTo(arr[j]) > 0)
                     {
                         T temp = arr[i];
-                        arr[j] = arr[i];
+                        arr[i] = arr[j];
                         arr[j] = temp;
                     }
                 }
@@ -109,5 +109,65 @@ namespace manageCarr.ExtensionMethods
                 arr[minIndex] = temp;
             }
         }
-    }
+
+        private static void Merge<T>(T[] arr, int left, int middle, int right) where T : IComparable
+        {
+            int indexLeft, indexRight, indexResult = left;
+            // lenght of array left
+            int lenghtLeft = middle - left + 1;
+            // lenght of array right
+            int lenghtRight = right - middle;
+
+            T[] leftArray = new T[lenghtLeft];
+            T[] rightArray = new T[lenghtRight];
+
+            for (indexLeft = 0; indexLeft < lenghtLeft; indexLeft++)
+            {
+                leftArray[indexLeft] = arr[left + indexLeft];
+            }
+            for (indexRight = 0; indexRight < lenghtRight; indexRight++)
+            {
+                rightArray[indexRight] = arr[middle + indexRight + 1];
+            }
+
+            indexLeft = 0; indexRight = 0;
+            while (indexLeft < lenghtLeft && indexRight < lenghtRight)
+            {
+                if (leftArray[indexLeft].CompareTo(rightArray[indexRight]) <= 0)
+                {
+                    arr[indexResult] = leftArray[indexLeft];
+                    indexLeft++;
+                }
+                else
+                {
+                    arr[indexResult] = rightArray[indexRight];
+                    indexRight++;
+                }
+                indexResult++;
+            }
+            while (indexLeft < lenghtLeft)
+            {
+                arr[indexResult] = leftArray[indexLeft];
+                indexResult++;
+                indexLeft++;
+            }
+            while (indexRight < lenghtRight)
+            {
+                arr[indexResult] = rightArray[indexRight];
+                indexResult++;
+                indexRight++;
+            }
+        }
+
+        public static void MergSort<T>(this T[] arr, int left, int right) where T : IComparable
+        {
+            if (left < right)
+            {
+                int middle = left + (right - left) / 2;
+                MergSort(arr, left, middle);
+                MergSort(arr, middle + 1, right);
+                Merge(arr, left, middle, right);
+            }
+        }
+    }   
 }

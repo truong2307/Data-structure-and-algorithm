@@ -86,7 +86,28 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-
-
+        /// <summary>
+        /// Selection sort
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arr"></param>
+        public static void SelectionSort<T>(this T[] arr) where T: IComparable
+        {
+            int minIndex=0;
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                minIndex = i;
+                for (int j = i+1; j < arr.Length; j++)
+                {
+                    if (arr[minIndex].CompareTo(arr[j]) > 0)
+                    {
+                        minIndex = j;
+                    }
+                }
+                T temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
+            }
+        }
     }
 }

@@ -25,6 +25,13 @@ namespace manageCarr
                 Console.Write(" " + item);
             }
 
+            Console.WriteLine("\nSelection sort");
+            arr.SelectionSort();
+            foreach (var item in arr)
+            {
+                Console.Write(" " + item);
+            }
+
             Console.ReadKey();
         }
     }

@@ -38,6 +38,21 @@ namespace manageCarr
             {
                 Console.Write(" " + item);
             }
+            Console.WriteLine();
+
+            IComparable requestSearch = 99;
+            Console.WriteLine("\nSo can tim trong mang là: "+requestSearch);
+            Console.WriteLine();
+            bool searchSuccess = arr.BinarySearch(0, arr.Length-1, requestSearch);
+
+            if (searchSuccess)
+            {
+                Console.WriteLine("Found {0} in array", requestSearch);
+            }
+            else
+            {
+                Console.WriteLine("Not Found {0} in array", requestSearch);
+            }
 
             Console.ReadKey();
         }

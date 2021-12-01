@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace manageCarr.ExtensionMethods
 {
-    public static class ExtensionMethod
+    public static class ExtensionMethodSort
     {
 
         // func để chia thành 2 mảng, 1 mảng lớn và 1 mảng nhỏ hơn pivot
@@ -122,28 +122,28 @@ namespace manageCarr.ExtensionMethods
         {
             int indexLeft, indexRight, indexResult = left;
             // lenght of array left
-            int lenghtLeft = middle - left + 1;
+            int lengthLeft = middle - left + 1;
             // lenght of array right
-            int lenghtRight = right - middle;
+            int lengthRight = right - middle;
             // create array contain value left
-            T[] leftArray = new T[lenghtLeft];
+            T[] leftArray = new T[lengthLeft];
             // create array contain value right
-            T[] rightArray = new T[lenghtRight];
+            T[] rightArray = new T[lengthRight];
 
             //import value by indexleft to array left from arr
-            for (indexLeft = 0; indexLeft < lenghtLeft; indexLeft++)
+            for (indexLeft = 0; indexLeft < lengthLeft; indexLeft++)
             {
                 leftArray[indexLeft] = arr[left + indexLeft];
             }
             //import value by indexright to array right from arr
-            for (indexRight = 0; indexRight < lenghtRight; indexRight++)
+            for (indexRight = 0; indexRight < lengthRight; indexRight++)
             {
                 rightArray[indexRight] = arr[middle + indexRight + 1];
             }
 
             // compare value at indexleft and indexright 
             indexLeft = 0; indexRight = 0;
-            while (indexLeft < lenghtLeft && indexRight < lenghtRight)
+            while (indexLeft < lengthLeft && indexRight < lengthRight)
             {
                 //if value at indexleft <= value at indexright 
                 if (leftArray[indexLeft].CompareTo(rightArray[indexRight]) <= 0)
@@ -159,14 +159,14 @@ namespace manageCarr.ExtensionMethods
                 indexResult++;
             }
             //if in arrayright has not value then add value from arrayleft to arr by indexresult
-            while (indexLeft < lenghtLeft)
+            while (indexLeft < lengthLeft)
             {
-                arr[indexResult] = leftArray[indexLeft];
-                indexResult++;
-                indexLeft++;
+                arr[indexResult++] = leftArray[indexLeft++];
+                //indexResult++;
+                //indexLeft++;
             }
             //if in arrayleft has not value then add value from arrayright to arr by indexresult
-            while (indexRight < lenghtRight)
+            while (indexRight < lengthRight)
             {
                 arr[indexResult] = rightArray[indexRight];
                 indexResult++;

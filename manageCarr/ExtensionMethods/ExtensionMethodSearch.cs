@@ -8,8 +8,9 @@ namespace manageCarr.ExtensionMethods
 {
     public static class ExtensionMethodSearch
     {
+        //Binary with loop
         /// <summary>
-        /// Binary Search
+        /// Binary Search need array sorted
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -17,8 +18,8 @@ namespace manageCarr.ExtensionMethods
         /// <param name="right"></param>
         /// <param name="requestSearch"></param>
         /// <returns></returns>
-        public static bool BinarySearch<T>(this T[] array
-            , int left, int right, T requestSearch) where T : IComparable
+        public static bool BinarySearchLoop<T>(this T[] array, int left, int right, T requestSearch) where T : IComparable
+
         {
             while (left <= right)
             {
@@ -44,7 +45,27 @@ namespace manageCarr.ExtensionMethods
             return false;
         }
 
+        //Binary search with recursive
+        public static bool BinarySearchRecursive<T>(this T[] array, int left, int right, T requestSearch) where T : IComparable
+        {
+            while (left <= right)
+            {
+                int middle = left + (right - left) / 2;
+                if (array[middle].CompareTo(requestSearch) == 0)
+                {
+                    return true;
+                }
+                if (array[middle].CompareTo(requestSearch) > 0)
+                {
+                    return BinarySearchRecursive(array, left, middle - 1, requestSearch);
+                }
+                if (array[middle].CompareTo(requestSearch) < 0)
+                {
+                    return BinarySearchRecursive(array, middle + 1, right, requestSearch);
+                }
+            }
 
-
+            return false;
+        }
     }
 }

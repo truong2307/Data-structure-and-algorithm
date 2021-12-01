@@ -40,12 +40,11 @@ namespace manageCarr
             }
             Console.WriteLine();
 
-            IComparable requestSearch = 99;
-            Console.WriteLine("\nSo can tim trong mang là: "+requestSearch);
-            Console.WriteLine();
-            bool searchSuccess = arr.BinarySearch(0, arr.Length-1, requestSearch);
-
-            if (searchSuccess)
+            IComparable requestSearch = 52;
+            Console.WriteLine("\nSo can tim trong mang la: " +requestSearch);
+            bool searchSuccessLoop = arr.BinarySearchLoop(0, arr.Length-1, requestSearch);
+            bool searchSuccessRecursive = arr.BinarySearchRecursive(0, arr.Length - 1, requestSearch);
+            if (searchSuccessRecursive)
             {
                 Console.WriteLine("Found {0} in array", requestSearch);
             }

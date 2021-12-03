@@ -40,6 +40,14 @@ namespace manageCarr
             //}
             //Console.WriteLine();
 
+            Console.WriteLine("\nInsertion sort");
+            arr.InsertionSort();
+            foreach (var item in arr)
+            {
+                Console.Write(" " + item);
+            }
+            Console.WriteLine();
+
             //IComparable requestSearch = 52;
             //Console.WriteLine("\nSo can tim trong mang la: " +requestSearch);
             //bool searchSuccessLoop = arr.BinarySearchLoop(0, arr.Length-1, requestSearch);
@@ -52,17 +60,17 @@ namespace manageCarr
             //{
             //    Console.WriteLine("Not Found {0} in array", requestSearch);
             //}
-            
-            Console.WriteLine("\nDoi sanh mau Brute Force:");
 
-            string requestString = "ABCCBACBABCABCA";
-            string wantFind = "BCA";
-            int amountFound = requestString.BruteForce(wantFind);
+            //Console.WriteLine("\nDoi sanh mau Brute Force:");
 
-            Console.WriteLine("String request: "+requestString);
-            Console.WriteLine("Found {0} {1} in string request", amountFound, wantFind);
+            //string requestString = "ABCCBACBABCABCA";
+            //string wantFind = "BCA";
+            //int amountFound = requestString.BruteForce(wantFind);
 
-            Console.ReadKey();
+            //Console.WriteLine("String request: "+requestString);
+            //Console.WriteLine("Found {0} {1} in string request", amountFound, wantFind);
+
+            //Console.ReadKey();
         }
     }
 }

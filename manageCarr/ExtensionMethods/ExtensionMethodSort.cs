@@ -185,5 +185,20 @@ namespace manageCarr.ExtensionMethods
                 Merge(arr, left, middle, right);
             }
         }
+
+        public static void InsertionSort<T>(this T[] array) where T : IComparable
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                T temp = array[i];
+                int pos = i - 1;
+                while (pos >=0 && array[pos].CompareTo(temp) > 0)
+                {
+                    array[pos + 1] = array[pos];
+                    pos--;
+                }
+                array[pos + 1] = temp;
+            }
+        }
     }   
 }

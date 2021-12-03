@@ -67,5 +67,24 @@ namespace manageCarr.ExtensionMethods
 
             return false;
         }
+
+        //Brute Force Algorithm
+        public static int BruteForce(this string stringInput, string stringFind) 
+        {
+            int stringInputLength = stringInput.Length;
+            int stringFindLength = stringFind.Length;
+            int count = 0;
+            int j;
+            //(stringInputLength - stringFindLength) to avoid out range 
+            for (int i = 0; i <= (stringInputLength - stringFindLength); i++)
+            {
+                for (j = 0; j < stringFindLength && stringFind[j] == stringInput[i+j] ; j++);
+                if (j >= stringFindLength)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
 }

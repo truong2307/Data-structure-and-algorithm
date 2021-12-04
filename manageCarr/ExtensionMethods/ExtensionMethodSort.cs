@@ -43,7 +43,7 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-        //Sort Icompare theo quicksort
+        //Quick sort
         public static void QuickSort<T>(this T[] arr, int left, int right) where T : IComparable
         {
             if (left < right)
@@ -65,16 +65,12 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-        /// <summary>
-        /// Bubble sort
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="arr"></param>
-        public static void BubbleSort<T>(this T[] arr) where T: IComparable
+        //Interchange Sort
+        public static void InterchangeSort<T>(this T[] arr) where T : IComparable
         {
-            for (int i = 0; i < arr.Length-1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = i+1; j < arr.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
                     if (arr[i].CompareTo(arr[j]) > 0)
                     {
@@ -86,11 +82,24 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-        /// <summary>
-        /// Selection sort
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="arr"></param>
+        //Bubble sort
+        public static void BubbleSort<T>(this T[] arr) where T : IComparable
+        {
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                for (int j = arr.Length - 1; j > i; j--)
+                {
+                    if (arr[j].CompareTo(arr[j-1]) < 0)
+                    {
+                        T temp = arr[j];
+                        arr[j] = arr[j-1];
+                        arr[j-1] = temp;
+                    }
+                }
+            }
+        }
+
+        //Selection sort
         public static void SelectionSort<T>(this T[] arr) where T: IComparable
         {
             int minIndex=0;
@@ -110,14 +119,7 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
-        /// <summary>
-        /// Merge sort
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="arr"></param>
-        /// <param name="left"></param>
-        /// <param name="middle"></param>
-        /// <param name="right"></param>
+        //Merge sort
         private static void Merge<T>(T[] arr, int left, int middle, int right) where T : IComparable
         {
             int indexLeft, indexRight, indexResult = left;
@@ -186,6 +188,7 @@ namespace manageCarr.ExtensionMethods
             }
         }
 
+        //Insertion sort
         public static void InsertionSort<T>(this T[] array) where T : IComparable
         {
             for (int i = 1; i < array.Length; i++)
@@ -200,5 +203,8 @@ namespace manageCarr.ExtensionMethods
                 array[pos + 1] = temp;
             }
         }
+
+
+
     }   
 }

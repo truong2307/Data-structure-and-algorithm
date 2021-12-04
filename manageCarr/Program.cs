@@ -18,12 +18,12 @@ namespace manageCarr
             //    Console.Write(" "+ item);
             //}
 
-            //Console.WriteLine("\nBubble sort");
-            //arr.BubbleSort();
-            //foreach (var item in arr)
-            //{
-            //    Console.Write(" " + item);
-            //}
+            Console.WriteLine("\nBubble sort");
+            arr.BubbleSort();
+            foreach (var item in arr)
+            {
+                Console.Write(" " + item);
+            }
 
             //Console.WriteLine("\nSelection sort");
             //arr.SelectionSort();
@@ -40,13 +40,13 @@ namespace manageCarr
             //}
             //Console.WriteLine();
 
-            Console.WriteLine("\nInsertion sort");
-            arr.InsertionSort();
-            foreach (var item in arr)
-            {
-                Console.Write(" " + item);
-            }
-            Console.WriteLine();
+            //Console.WriteLine("\nInsertion sort");
+            //arr.InsertionSort();
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(" " + item);
+            //}
+            //Console.WriteLine();
 
             //IComparable requestSearch = 52;
             //Console.WriteLine("\nSo can tim trong mang la: " +requestSearch);

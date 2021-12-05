@@ -84,6 +84,18 @@ namespace manageCarr
             
             root.DisplayLeftNodeRight();
 
+            int searchRequest = 8;
+            bool searchNode = root.SearchNode(searchRequest);
+            Console.WriteLine();
+            if (searchNode)
+            {
+                Console.WriteLine("Success");
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+
             Console.ReadKey();
         }
     }

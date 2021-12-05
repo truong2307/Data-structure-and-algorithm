@@ -78,5 +78,27 @@ namespace manageCarr.BinarySearchTree
                 DisplayLeftNodeRight(root.Right);
             }
         }
+
+        public static bool SearchNode (this Node root, int requestValue)
+        {
+            Node nodeNew = root;
+            while (nodeNew != null)
+            {
+                if (nodeNew.Key == requestValue)
+                {
+                    return true;
+                }
+                if (nodeNew.Key > requestValue)
+                {
+                    nodeNew = nodeNew.Left;
+                }
+                else
+                {
+                    nodeNew = nodeNew.Right;
+                }
+                
+            }
+            return false;
+        }
     }
 }

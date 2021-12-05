@@ -1,23 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace manageCarr.ExtensionMethods
 {
     public static class ExtensionMethodSearch
     {
-        //Binary with loop
-        /// <summary>
-        /// Binary Search need array sorted
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="array"></param>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
-        /// <param name="requestSearch"></param>
-        /// <returns></returns>
+        //Binary Search need array be sorted
         public static bool BinarySearchLoop<T>(this T[] array, int left, int right, T requestSearch) where T : IComparable
 
         {
@@ -68,8 +55,8 @@ namespace manageCarr.ExtensionMethods
             return false;
         }
 
-        //Brute Force Algorithm
-        public static int BruteForce(this string stringInput, string stringFind) 
+        //Brute Force 
+        public static int BruteForce(this string stringInput, string stringFind)
         {
             int stringInputLength = stringInput.Length;
             int stringFindLength = stringFind.Length;
@@ -78,7 +65,7 @@ namespace manageCarr.ExtensionMethods
             //(stringInputLength - stringFindLength) to avoid out range 
             for (int i = 0; i <= (stringInputLength - stringFindLength); i++)
             {
-                for (j = 0; j < stringFindLength && stringFind[j] == stringInput[i+j] ; j++);
+                for (j = 0; j < stringFindLength && stringFind[j] == stringInput[i + j]; j++) ;
                 if (j >= stringFindLength)
                 {
                     count++;

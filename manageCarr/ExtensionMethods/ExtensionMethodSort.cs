@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace manageCarr.ExtensionMethods
 {
@@ -85,28 +79,28 @@ namespace manageCarr.ExtensionMethods
         //Bubble sort
         public static void BubbleSort<T>(this T[] arr) where T : IComparable
         {
-            for (int i = 0; i < arr.Length-1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = arr.Length - 1; j > i; j--)
                 {
-                    if (arr[j].CompareTo(arr[j-1]) < 0)
+                    if (arr[j].CompareTo(arr[j - 1]) < 0)
                     {
                         T temp = arr[j];
-                        arr[j] = arr[j-1];
-                        arr[j-1] = temp;
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = temp;
                     }
                 }
             }
         }
 
         //Selection sort
-        public static void SelectionSort<T>(this T[] arr) where T: IComparable
+        public static void SelectionSort<T>(this T[] arr) where T : IComparable
         {
-            int minIndex=0;
-            for (int i = 0; i < arr.Length-1; i++)
+            int minIndex = 0;
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 minIndex = i;
-                for (int j = i+1; j < arr.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
                     if (arr[minIndex].CompareTo(arr[j]) > 0)
                     {
@@ -195,7 +189,7 @@ namespace manageCarr.ExtensionMethods
             {
                 T temp = array[i];
                 int pos = i - 1;
-                while (pos >=0 && array[pos].CompareTo(temp) > 0)
+                while (pos >= 0 && array[pos].CompareTo(temp) > 0)
                 {
                     array[pos + 1] = array[pos];
                     pos--;
@@ -206,5 +200,5 @@ namespace manageCarr.ExtensionMethods
 
 
 
-    }   
+    }
 }

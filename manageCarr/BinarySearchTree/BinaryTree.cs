@@ -105,6 +105,8 @@ namespace manageCarr.BinarySearchTree
         {
             Node nodeNew = root;
             Node parent = null;
+
+            //find destination of valueRequest
             if (root != null)
             {
                 while (nodeNew != null && nodeNew.Key != valueRequest)
@@ -121,8 +123,10 @@ namespace manageCarr.BinarySearchTree
                 }
             }
 
+            //delete node
             if (nodeNew != null)
             {
+                //if node have left and right not null
                 if (nodeNew.Left !=null && nodeNew.Right != null)
                 {
                     Node temp = nodeNew.Right;
@@ -136,8 +140,10 @@ namespace manageCarr.BinarySearchTree
                     nodeNew.Key = temp.Key;
                 }
 
+                // parent key > node request key
                 if (parent.Key > nodeNew.Key)
                 {
+                    // right of node request  == null
                     if (nodeNew.Right == null)
                     {
                         parent.Left = parent.Left.Left;
@@ -147,6 +153,8 @@ namespace manageCarr.BinarySearchTree
                         parent.Left = parent.Left.Right;
                     }
                 }
+
+                //parent key < node request key
                 else if (parent.Key < nodeNew.Key)
                 {
                     if (nodeNew.Right == null)
@@ -158,6 +166,8 @@ namespace manageCarr.BinarySearchTree
                         parent.Right = parent.Right.Right;
                     }
                 }
+
+                //parent key == node request key (case: a node have left and right not null )
                 else
                 {
                     parent.Right = parent.Right.Right;

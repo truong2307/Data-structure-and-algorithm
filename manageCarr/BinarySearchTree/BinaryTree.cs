@@ -100,5 +100,69 @@ namespace manageCarr.BinarySearchTree
             }
             return false;
         }
+
+        public static void DeleteNode (this Node root, int valueRequest)
+        {
+            Node nodeNew = root;
+            Node parent = null;
+            if (root != null)
+            {
+                while (nodeNew != null && nodeNew.Key != valueRequest)
+                {
+                    parent = nodeNew;
+                    if (nodeNew.Key > valueRequest)
+                    {
+                        nodeNew = nodeNew.Left;
+                    }
+                    else
+                    {
+                        nodeNew = nodeNew.Right;
+                    }
+                }
+            }
+
+            if (nodeNew != null)
+            {
+                if (nodeNew.Left !=null && nodeNew.Right != null)
+                {
+                    Node temp = nodeNew.Right;
+                    parent = nodeNew;
+                    while (temp.Left != null)
+                    {
+                        parent = temp;
+                        temp = temp.Left;
+                    }
+
+                    nodeNew.Key = temp.Key;
+                }
+
+                if (parent.Key > nodeNew.Key)
+                {
+                    if (nodeNew.Right == null)
+                    {
+                        parent.Left = parent.Left.Left;
+                    }
+                    else
+                    {
+                        parent.Left = parent.Left.Right;
+                    }
+                }
+                else if (parent.Key < nodeNew.Key)
+                {
+                    if (nodeNew.Right == null)
+                    {
+                        parent.Right = parent.Right.Left;
+                    }
+                    else
+                    {
+                        parent.Right = parent.Right.Right;
+                    }
+                }
+                else
+                {
+                    parent.Right = parent.Right.Right;
+                }
+            }
+        }
     }
 }

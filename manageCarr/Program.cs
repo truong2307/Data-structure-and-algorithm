@@ -1,6 +1,6 @@
 ﻿using manageCarr.ExtensionMethods;
 using System;
-using static manageCarr.BinarySearchTree.BinaryTree;
+using static manageCarr.LinkedList.LinkedList;
 
 namespace manageCarr
 {
@@ -72,23 +72,23 @@ namespace manageCarr
             //Console.WriteLine("String request: "+requestString);
             //Console.WriteLine("Found {0} {1} in string request", amountFound, wantFind);
 
-            Console.WriteLine();
+            //Console.WriteLine();
             #endregion
 
             #region Binary Tree
-            Node root = new Node();
+            //Node root = new Node();
 
-            root.InsertNode(15);
-            root.InsertNode(20);
-            root.InsertNode(8);
-            root.InsertNode(40);
-            root.InsertNode(7);
-            root.InsertNode(18);
-            root.InsertNode(19);
-            root.InsertNode(90);
-            root.InsertNode(50);
-            
-            root.DisplayLeftNodeRight();
+            //root.InsertNode(15);
+            //root.InsertNode(20);
+            //root.InsertNode(8);
+            //root.InsertNode(40);
+            //root.InsertNode(7);
+            //root.InsertNode(18);
+            //root.InsertNode(19);
+            //root.InsertNode(90);
+            //root.InsertNode(50);
+
+            //root.DisplayLeftNodeRight();
 
             //int searchRequest = 8;
             //bool searchNode = root.SearchNode(searchRequest);
@@ -101,9 +101,27 @@ namespace manageCarr
             //{
             //    Console.WriteLine("error");
             //}
-            Console.WriteLine("\nDeleted");
-            root.DeleteNode(50);
-            root.DisplayLeftNodeRight();
+            //Console.WriteLine("\nDeleted");
+            //root.DeleteNode(50);
+            //root.DisplayLeftNodeRight();
+
+            #endregion
+
+            #region Linked List
+
+            Node linkList = new Node();
+
+            linkList.InsertLastNode(2);
+            linkList.InsertLastNode(6);
+            linkList.InsertLastNode(9);
+            linkList.InsertLastNode(11);
+            linkList.InsertLastNode(13);
+            linkList.InsertLastNode(20);
+
+            var nodeNew = linkList.InsertFirstNode(90);
+            nodeNew.InsertAfterNode(2, 69);
+
+            nodeNew.DisplayNode();
 
             #endregion
 

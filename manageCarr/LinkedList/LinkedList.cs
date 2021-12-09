@@ -86,5 +86,75 @@ namespace manageCarr.LinkedList
                 newNode = newNode.Next;
             }
         }
+
+        public static Node DeleteFirstNode (this Node head)
+        {
+            if (head != null)
+            {
+                Node newNode = head.Next;
+                return newNode;
+            }
+
+            throw new Exception(); 
+        }
+
+        public static void DeleteLastNode(this Node node)
+        { 
+            if (node != null)
+            {
+                Node lastNode = node;
+                Node parent = null;
+
+                while (lastNode.Next != null)
+                {
+                    parent = lastNode;
+                    lastNode = lastNode.Next;
+                }
+                if (parent == null)
+                {
+                    Console.WriteLine(DeleteFirstNode(node));
+                }
+                else
+                {
+                    parent.Next = null;
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public static void DeleteNodeValue(this Node node, int valueRequest)
+        {
+            if (node != null)
+            {
+                Node newNode = node;
+                Node parent = null;
+                while (newNode != null && newNode.Value != valueRequest)
+                {
+                    parent = newNode;
+                    newNode = newNode.Next;
+                }
+
+                if (newNode != null)
+                {
+                    if (parent == null)
+                    {
+                        Node deleted = DeleteFirstNode(node);
+                        DisplayNode(deleted);
+                    }
+                    else
+                    {
+                        parent.Next = parent.Next.Next;
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
     }
 }

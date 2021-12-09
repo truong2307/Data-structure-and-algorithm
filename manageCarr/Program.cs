@@ -121,6 +121,11 @@ namespace manageCarr
             var nodeNew = linkList.InsertFirstNode(90);
             nodeNew.InsertAfterNode(2, 69);
 
+
+            nodeNew.DisplayNode();
+            Console.WriteLine();
+            
+            nodeNew.DeleteLastNode();
             nodeNew.DisplayNode();
 
             #endregion

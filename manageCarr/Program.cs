@@ -1,6 +1,6 @@
 ﻿using manageCarr.ExtensionMethods;
 using System;
-using static manageCarr.LinkedList.LinkedList;
+using static manageCarr.DoublyLinkedList.DoublyLinkedList;
 
 namespace manageCarr
 {
@@ -109,25 +109,45 @@ namespace manageCarr
 
             #region Linked List
 
-            Node linkList = new Node();
+            //Node linkList = new Node();
 
-            linkList.InsertLastNode(2);
-            linkList.InsertLastNode(6);
-            linkList.InsertLastNode(9);
-            linkList.InsertLastNode(11);
-            linkList.InsertLastNode(13);
-            linkList.InsertLastNode(20);
+            //linkList.InsertLastNode(2);
+            //linkList.InsertLastNode(6);
+            //linkList.InsertLastNode(9);
+            //linkList.InsertLastNode(11);
+            //linkList.InsertLastNode(13);
+            //linkList.InsertLastNode(20);
 
-            var nodeNew = linkList.InsertFirstNode(90);
-            nodeNew.InsertAfterNode(2, 69);
+            //var nodeNew = linkList.InsertFirstNode(90);
+            //nodeNew.InsertAfterNode(2, 69);
 
 
-            nodeNew.DisplayNode();
+            //nodeNew.DisplayNode();
+            //Console.WriteLine();
+
+            //nodeNew.DeleteLastNode();
+            //nodeNew.DisplayNode();
+
+            #endregion
+
+            #region Doubly Linked List
+
+            DoubleLinkedList list = new DoubleLinkedList
+            {
+                Head = null,
+                Tail = null
+            };
+
+            list.AddFirstNode(10);
+            list.AddFirstNode(9);
+            list.AddFirstNode(25);
+
+            list.AddLastNode(36);
+            list.AddLastNode(23);
+
+            list.DisplayNodeLeftToRight();
             Console.WriteLine();
-            
-            nodeNew.DeleteLastNode();
-            nodeNew.DisplayNode();
-
+            list.DisplayNodeRightToLeft();
             #endregion
 
             Console.ReadKey();

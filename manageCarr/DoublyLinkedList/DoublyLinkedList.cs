@@ -12,7 +12,7 @@ namespace manageCarr.DoublyLinkedList
         }
 
         public class DoubleLinkedList
-        {
+        {        
             public Node Head { get; set; }
             public Node Tail { get; set; }
         }
@@ -56,6 +56,33 @@ namespace manageCarr.DoublyLinkedList
                 newNode.Previous = node.Tail;
                 node.Tail.Next = newNode;
                 node.Tail = newNode;
+            }
+        }
+
+        public static void AddAfterNode(this DoubleLinkedList node, int valueAfter, int valueRequest)
+        {
+            Node myNode = node.Head;
+            while (myNode != null && myNode.value != valueAfter)
+            {
+                myNode = myNode.Next;
+            }
+
+            if (myNode != null)
+            {
+                if (myNode != node.Tail)
+                {
+                    Node newNode = CreateNode(valueRequest);
+
+                    newNode.Next = myNode.Next;
+                    myNode.Next.Previous = newNode;
+
+                    newNode.Previous = myNode;
+                    myNode.Next = newNode;
+                }
+                else
+                {
+                    AddLastNode(node, valueRequest);
+                }
             }
         }
 

@@ -86,6 +86,65 @@ namespace manageCarr.DoublyLinkedList
             }
         }
 
+        public static void DeleteFirstNode(this DoubleLinkedList node)
+        {
+            if (node.Head != null)
+            {
+                Node newNode = node.Head;
+
+                node.Head = newNode.Next;
+                if (newNode.Next !=null)
+                {
+                    newNode.Next.Previous = null;
+                    newNode.Next = null;
+                }
+            }
+        }
+
+        public static void DeleteLastNode(this DoubleLinkedList node)
+        {
+            if (node.Tail !=null)
+            {
+                Node newNode = node.Tail;
+
+                node.Tail = newNode.Previous;
+                if (newNode.Previous !=null)
+                {
+                    newNode.Previous.Next = null;
+                    newNode.Previous=null;
+                }
+            }
+        }
+
+        public static void DeleteNodeValue(this DoubleLinkedList node, int valueRequest)
+        {
+            Node myNode = node.Head;
+
+            while (myNode != null && myNode.value != valueRequest)
+            {
+                myNode = myNode.Next;
+            }
+
+            if (myNode != null)
+            {
+                if (myNode == node.Head)
+                {
+                    DeleteFirstNode(node);
+                }
+                else if (myNode == node.Tail)
+                {
+                    DeleteLastNode(node);
+                }
+                else
+                {
+                    myNode.Previous.Next = myNode.Next;
+                    myNode.Next.Previous = myNode.Previous;
+                    myNode.Next = null;
+                    myNode.Previous = null;
+                }
+            }
+        }
+
         public static void DisplayNodeLeftToRight(this DoubleLinkedList node)
         {
             Node newNode = node.Head;

@@ -144,10 +144,16 @@ namespace manageCarr
 
             list.AddLastNode(36);
             list.AddLastNode(23);
+            list.DisplayNodeLeftToRight();
+            Console.WriteLine();
+
+            list.AddAfterNode(23, 33);
 
             list.DisplayNodeLeftToRight();
             Console.WriteLine();
-            list.DisplayNodeRightToLeft();
+
+            list.DeleteNodeValue(33);
+            list.DisplayNodeLeftToRight();
             #endregion
 
             Console.ReadKey();

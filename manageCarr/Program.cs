@@ -1,5 +1,4 @@
-﻿using manageCarr.ExtensionMethods;
-using System;
+﻿using System;
 using static manageCarr.DoublyLinkedList.DoublyLinkedList;
 
 namespace manageCarr
@@ -9,6 +8,8 @@ namespace manageCarr
 
         static void Main(string[] args)
         {
+            //IMenu menu = new Menu();
+            //menu.SelectFeature();
 
             #region Algorithm Sort
             //IComparable[] arr = { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
@@ -17,7 +18,7 @@ namespace manageCarr
             //arr.QuickSort(0, arr.Length - 1);
             //foreach (var item in arr)
             //{
-            //    Console.Write(item+ " ");
+            //    Console.Write(item + " ");
             //}
 
             //Console.WriteLine("\nBubble sort");
@@ -51,8 +52,8 @@ namespace manageCarr
             //Console.WriteLine();
 
             //IComparable requestSearch = 52;
-            //Console.WriteLine("\nSo can tim trong mang la: " +requestSearch);
-            //bool searchSuccessLoop = arr.BinarySearchLoop(0, arr.Length-1, requestSearch);
+            //Console.WriteLine("\nSo can tim trong mang la: " + requestSearch);
+            //bool searchSuccessLoop = arr.BinarySearchLoop(0, arr.Length - 1, requestSearch);
             //bool searchSuccessRecursive = arr.BinarySearchRecursive(0, arr.Length - 1, requestSearch);
             //if (searchSuccessRecursive)
             //{
@@ -69,7 +70,7 @@ namespace manageCarr
             //string wantFind = "BCA";
             //int amountFound = requestString.BruteForce(wantFind);
 
-            //Console.WriteLine("String request: "+requestString);
+            //Console.WriteLine("String request: " + requestString);
             //Console.WriteLine("Found {0} {1} in string request", amountFound, wantFind);
 
             //Console.WriteLine();
@@ -131,29 +132,28 @@ namespace manageCarr
             #endregion
 
             #region Doubly Linked List
+            //DoubleLinkedList list = new DoubleLinkedList
+            //{
+            //    Head = null,
+            //    Tail = null
+            //};
 
-            DoubleLinkedList list = new DoubleLinkedList
-            {
-                Head = null,
-                Tail = null
-            };
+            //list.AddFirstNode(10);
+            //list.AddFirstNode(9);
+            //list.AddFirstNode(25);
 
-            list.AddFirstNode(10);
-            list.AddFirstNode(9);
-            list.AddFirstNode(25);
+            //list.AddLastNode(36);
+            //list.AddLastNode(23);
+            //list.DisplayNodeLeftToRight();
+            //Console.WriteLine();
 
-            list.AddLastNode(36);
-            list.AddLastNode(23);
-            list.DisplayNodeLeftToRight();
-            Console.WriteLine();
+            //list.AddAfterNode(23, 33);
 
-            list.AddAfterNode(23, 33);
+            //list.DisplayNodeLeftToRight();
+            //Console.WriteLine();
 
-            list.DisplayNodeLeftToRight();
-            Console.WriteLine();
-
-            list.DeleteNodeValue(33);
-            list.DisplayNodeLeftToRight();
+            //list.DeleteNodeValue(33);
+            //list.DisplayNodeLeftToRight();
             #endregion
 
             Console.ReadKey();

@@ -1,4 +1,5 @@
 ﻿using System;
+using static manageCarr.Data_Structure_And_Algorithm.StackAndQueue.LearnStack;
 using static manageCarr.DoublyLinkedList.DoublyLinkedList;
 
 namespace manageCarr
@@ -154,6 +155,30 @@ namespace manageCarr
 
             //list.DeleteNodeValue(33);
             //list.DisplayNodeLeftToRight();
+            #endregion
+
+            #region Stack
+
+            Stack stack = new Stack()
+            {
+                Value = new int[50]
+            };
+
+            stack.Push(10);
+            stack.Push(15);
+            stack.Push(20);
+
+            stack.DisplayStack();
+            Console.WriteLine();
+            stack.Pop();
+
+            stack.DisplayStack();
+
+            Console.WriteLine();
+
+            stack.Push(100);
+            stack.DisplayStack();
+
             #endregion
 
             Console.ReadKey();

@@ -1,5 +1,6 @@
 ﻿using System;
 using static manageCarr.Data_Structure_And_Algorithm.StackAndQueue.LearnStack;
+using static manageCarr.DataStructureAndAlgorithm.StackAndQueue.LearnQueue;
 using static manageCarr.DoublyLinkedList.DoublyLinkedList;
 
 namespace manageCarr
@@ -159,25 +160,46 @@ namespace manageCarr
 
             #region Stack
 
-            Stack stack = new Stack()
-            {
-                Value = new int[50]
-            };
+            //Stack stack = new Stack()
+            //{
+            //    Value = new int[50]
+            //};
 
-            stack.Push(10);
-            stack.Push(15);
-            stack.Push(20);
+            //stack.Push(10);
+            //stack.Push(15);
+            //stack.Push(20);
 
-            stack.DisplayStack();
+            //stack.DisplayStack();
+            //Console.WriteLine();
+            //stack.Pop();
+
+            //stack.DisplayStack();
+
+            //Console.WriteLine();
+
+            //stack.Push(100);
+            //stack.DisplayStack();
+
+            #endregion
+
+            #region queue
+
+            Queue queue = new Queue();
+
+            queue.Enqueue(15);
+            queue.Enqueue(19);
+            queue.Enqueue(25);
+            queue.Enqueue(46);
+
+            queue.DisplayQueue();
+
             Console.WriteLine();
-            stack.Pop();
-
-            stack.DisplayStack();
+            queue.Dequeue();
+            queue.DisplayQueue();
 
             Console.WriteLine();
-
-            stack.Push(100);
-            stack.DisplayStack();
+            queue.Dequeue();
+            queue.DisplayQueue();
 
             #endregion
 

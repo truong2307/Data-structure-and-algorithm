@@ -32,6 +32,22 @@ namespace manageCarr.ExtensionMethods
             return false;
         }
 
+        public static bool LinearSearch<T>(this T[] array, int requestSearch) where T: IComparable
+        {
+            int lengthArray = array.Length;
+            int result = 0;
+            while (result < lengthArray && array[result].CompareTo(requestSearch) != 0)
+            {
+                result++;
+            }
+            if (result == lengthArray)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         //Binary search with recursive
         public static bool BinarySearchRecursive<T>(this T[] array, int left, int right, T requestSearch) where T : IComparable
         {

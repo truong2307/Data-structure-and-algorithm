@@ -39,7 +39,5 @@ namespace manageCarr.DataStructureAndAlgorithm.StackAndQueue
                 Console.Write(queue.Value[i] + " ");
             }
         }
-
-
     }
 }

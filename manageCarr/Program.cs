@@ -1,4 +1,5 @@
-﻿using System;
+﻿using manageCarr.ExtensionMethods;
+using System;
 using static manageCarr.Data_Structure_And_Algorithm.StackAndQueue.LearnStack;
 using static manageCarr.DataStructureAndAlgorithm.StackAndQueue.LearnQueue;
 using static manageCarr.DoublyLinkedList.DoublyLinkedList;
@@ -14,7 +15,7 @@ namespace manageCarr
             //menu.SelectFeature();
 
             #region Algorithm Sort
-            //IComparable[] arr = { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
+            IComparable[] arr = { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
 
             //Console.WriteLine("Quick sort");
             //arr.QuickSort(0, arr.Length - 1);
@@ -76,6 +77,19 @@ namespace manageCarr
             //Console.WriteLine("Found {0} {1} in string request", amountFound, wantFind);
 
             //Console.WriteLine();
+
+            int value = 51;
+            var foundValue = arr.LinearSearch(value);
+            if (foundValue)
+            {
+                Console.WriteLine("Found: " + value + " in array.");
+            }
+            else
+            {
+                Console.WriteLine("not found");
+            }
+
+
             #endregion
 
             #region Binary Tree
@@ -184,22 +198,22 @@ namespace manageCarr
 
             #region queue
 
-            Queue queue = new Queue();
+            //Queue queue = new Queue();
 
-            queue.Enqueue(15);
-            queue.Enqueue(19);
-            queue.Enqueue(25);
-            queue.Enqueue(46);
+            //queue.Enqueue(15);
+            //queue.Enqueue(19);
+            //queue.Enqueue(25);
+            //queue.Enqueue(46);
 
-            queue.DisplayQueue();
+            //queue.DisplayQueue();
 
-            Console.WriteLine();
-            queue.Dequeue();
-            queue.DisplayQueue();
+            //Console.WriteLine();
+            //queue.Dequeue();
+            //queue.DisplayQueue();
 
-            Console.WriteLine();
-            queue.Dequeue();
-            queue.DisplayQueue();
+            //Console.WriteLine();
+            //queue.Dequeue();
+            //queue.DisplayQueue();
 
             #endregion
 
